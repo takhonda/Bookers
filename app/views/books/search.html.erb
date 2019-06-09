@@ -1,0 +1,13 @@
+<div class="container">
+<div class="field row">
+</div>
+
+<ul><% @books.each do |book| %>
+  <li>
+    <%= link_to book.title, book %>
+    <%= book.created_at %>
+    <%#= book.status %>
+  </li>
+  <% end %>
+</ul>
+</div>

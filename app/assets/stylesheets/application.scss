@@ -1,0 +1,102 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+ @import "bootstrap-sprockets";  /*ここを追加*/
+ @import "bootstrap";            /*ここを追加*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  margin-top: 51px;
+}
+
+.btn-default {
+ margin-top: 10px;
+}
+
+div.field {
+ margin-bottom: 10px;
+}
+
+.searchbox {
+ text-align: right;
+ margin-top: 10px;
+ margin-right: 4px;
+}
+
+#button-3{
+  border: 2px solid #5bc0de;
+  color: #46b8da;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#button-3:before, #button-3:after{
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: -50%;
+  background-color: #46b8da;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#button-3:after{
+  left: 100%;
+}
+
+#button-3:hover{
+  color: #ecf0f1;
+}
+
+#button-3:hover:before{
+  left: 0;
+}
+
+#button-3:hover:after{
+  left: 50%;
+}
+
+#button-7{
+  -webkit-perspective: 50px;
+  -moz-perspective: 50px;
+  -ms-perspective: 50px;
+  perspective: 50px;
+  color: #ffffff;
+  background-color: #4cae4c;
+  -webkit-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+#button-7:hover{
+  -webkit-transform: rotateX(360deg);
+  -ms-transform: rotateX(360deg);
+  -o-transform: rotateX(360deg);
+  transform: rotateX(360deg);
+}
+
