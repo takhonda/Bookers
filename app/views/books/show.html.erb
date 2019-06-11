@@ -82,9 +82,7 @@
         <a href="#comments"><%= @book.post_comments.count %></a>
         </li>
         <li>
-          <% if @book.user == current_user %>
-            <%= link_to "削除", book_path(@book), method: :delete %>
-          <% end %>
+
         </li>
         </ul>
         <div class="post-content-inner mt-20">
@@ -113,6 +111,7 @@
                         </span>
                     </div>
                     <div class="comment-entry"><%= post_comment.comment %></div>
+                    <div><%= link_to "削除", "/books/#{@book.id}/post_comments/#{post_comment.id}", method: :delete %></div>
                 </div>
             </div>
         </li>
