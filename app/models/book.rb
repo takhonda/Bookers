@@ -5,7 +5,7 @@ class Book < ApplicationRecord
     validates :opinion, length: { in: 1..200 }
     has_many :post_comments, dependent: :destroy
     has_many :favorites, dependent: :destroy
-    ratyrate_rateable "speed", "engine", "price"
+    
     def favorited_by?(user)
         favorites.where(user_id: user.id).exists?
     end
