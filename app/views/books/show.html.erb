@@ -58,8 +58,6 @@
       </tr>
     </table>
     
-  <p><%= rating_for @book %></p>
-    
 <!-- ここから -->
 <% if @book.favorited_by?(current_user) %>
   <li>
@@ -103,6 +101,7 @@
                     <div class="avatar">
                         <%= attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60, fallback: "no_image-ede28af4bad96368ef41be1b4be1cffce0d9402540f75d17895e32cb0d2af5e6.jpg" %>
                 </div>
+                <p><%= rating_for post_comment, 'review', disable_after_rate: false %></p>
                 <div class="comment-text">
                     <div class="comment-author clearfix">
                         <a href="#" class="link-author"><%= post_comment.user.name %></a>
