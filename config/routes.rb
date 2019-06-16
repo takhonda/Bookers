@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   
   get '/search' => 'books#search',as: 'books_search'
   
+  get '/usersearch' => 'users#search',as: 'users_search'
   
   delete '/books/:id' => 'books#destroy', as: 'destroy_books'
 
