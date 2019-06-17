@@ -1,10 +1,9 @@
 <div class='body'>
       <div class='container'>
-
-        <p id="notice">Signed in successfully.</p>
-
+        <% if flash[:notice] %>
+     <p id="notice"><%= flash[:notice] %></p>
+        <% end %>
       	<div class='row'>
-  
   <div class='col-xs-3'>
     <h2>User info</h2>
     <table class='table'>
@@ -42,7 +41,7 @@
 
  <div class='col-xs-9'>
     <div class="field row searchbox">
-<%= form_tag(books_search_path,:method => 'get') do %>
+<%= form_tag(users_search_path,:method => 'get') do %>
   <%= text_field_tag :search %>
   <%= submit_tag 'Search', :name => nil %>
 <% end %>
