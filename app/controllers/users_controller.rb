@@ -45,6 +45,17 @@ class UsersController < ApplicationController
       render 'show_follower'
   end
   
+  def search
+    #Viewのformで取得したパラメータをモデルに渡す
+
+    @users = User.search(params[:search])
+    @book = Book.new
+    @user = current_user
+
+    render 'index'
+    # redirect_to users_path
+  end
+  
   private
   def user_params
     params.require(:user).permit(:name, :profile_image, :introduction)
