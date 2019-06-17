@@ -47,8 +47,13 @@ class UsersController < ApplicationController
   
   def search
     #Viewのformで取得したパラメータをモデルに渡す
+
     @users = User.search(params[:search])
-    redirect_to users_path
+    @book = Book.new
+    @user = current_user
+
+    render 'index'
+    # redirect_to users_path
   end
   
   private

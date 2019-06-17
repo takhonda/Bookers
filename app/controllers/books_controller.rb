@@ -70,6 +70,10 @@ class BooksController < ApplicationController
   def search
     #Viewのformで取得したパラメータをモデルに渡す
     @books = Book.search(params[:search])
+    @book = Book.new
+    @user = current_user
+    @all_ranks = Book.find(Favorite.group(:book_id).order('count(book_id) desc').limit(3).pluck(:book_id))
+    render 'index'
   end
   
   
