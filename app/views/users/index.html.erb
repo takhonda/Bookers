@@ -7,7 +7,7 @@
   <div class='col-xs-3'>
     <h2>User info</h2>
     <table class='table'>
-      <tr><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "pull-left profile-thumb", fallback: "no_image-ede28af4bad96368ef41be1b4be1cffce0d9402540f75d17895e32cb0d2af5e6.jpg" %></tr> 
+      <tr><%= attachment_image_tag @user, :profile_image, :fill, 40, 40, class: "pull-left profile-thumb", fallback: "no_image-ede28af4bad96368ef41be1b4be1cffce0d9402540f75d17895e32cb0d2af5e6.jpg" %></tr> 
       <tr>
     	  <th>name</th>
     	  <th><%= current_user.name %></th>
@@ -60,7 +60,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg',size: '50x50' %></td>
+        <td><%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg',size: '50x50', fallback: "no_image-ede28af4bad96368ef41be1b4be1cffce0d9402540f75d17895e32cb0d2af5e6.jpg" %></td>
         <td><%= user.name %></td>
         <td><%= link_to 'Show',user_path(user) %></a></td>
       </tr>
